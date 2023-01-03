@@ -24,9 +24,9 @@
                             <label class="form-label" for="lastname">فامیل</label>
                         </div>
                         <div class="btn-group mb-4">
-                            <input type="radio" class="btn-check" name="gender" id="malegender" autocomplete="off" checked />
+                            <input type="radio" class="btn-check" name="gender" value="male" id="malegender" autocomplete="off" checked />
                             <label class="btn btn-secondary" for="malegender">مذکر</label>
-                            <input type="radio" class="btn-check" name="gender" id="femalegender" autocomplete="off" />
+                            <input type="radio" class="btn-check" name="gender" value="female" id="femalegender" autocomplete="off" />
                             <label class="btn btn-secondary" for="femalegender">مونث</label>
                         </div>
                         <div class="form-outline mb-4">

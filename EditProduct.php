@@ -25,7 +25,8 @@
                     productprice = ?,
                     productimg = ?
                     WHERE id = {$pid}";
-            $result = $db -> query($sql, $_POST['producttitle'], $_POST['productname'], $_POST['productdescription'], $_POST['productcode'], $_POST['category'], $_POST['brand'], $_POST['productprice'], $_POST['productimg']);
+            $Images_Dir = "Images" . "/" . $_POST['productimg'];
+            $result = $db -> query($sql, $_POST['producttitle'], $_POST['productname'], $_POST['productdescription'], $_POST['productcode'], $_POST['category'], $_POST['brand'], $_POST['productprice'], $Images_Dir);
             header('Location: Product_DataTable.php');
             exit;
         }

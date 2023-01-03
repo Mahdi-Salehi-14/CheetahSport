@@ -32,29 +32,29 @@
                             <label class="form-label" for="productcode">کد</label>
                         </div>
                         <div class="btn-group mb-4">
-                            <input type="radio" class="btn-check" name="category" id="sportshoes" autocomplete="off" <?php if($category == 'sportshoes') {echo 'checked';} ?> />
+                            <input type="radio" class="btn-check" name="category" value="sportshoes" id="sportshoes" autocomplete="off" <?php if($category == 'sportshoes') {echo 'checked';} ?> />
                             <label class="btn btn-secondary" for="sportshoes">کفش ورزشی</label>
 
-                            <input type="radio" class="btn-check" name="category" id="sportsequipment" autocomplete="off" <?php if($category == 'sportsequipment') {echo 'checked';} ?> />
+                            <input type="radio" class="btn-check" name="category" value="sportsequipment" id="sportsequipment" autocomplete="off" <?php if($category == 'sportsequipment') {echo 'checked';} ?> />
                             <label class="btn btn-secondary" for="sportsequipment">وسیله ورزشی</label>
 
-                            <input type="radio" class="btn-check" name="category" id="womensportswear" autocomplete="off" <?php if($category == 'womensportswear') {echo 'checked';} ?> />
+                            <input type="radio" class="btn-check" name="category" value="womensportswear" id="womensportswear" autocomplete="off" <?php if($category == 'womensportswear') {echo 'checked';} ?> />
                             <label class="btn btn-secondary" for="womensportswear">لباس ورزشی زنانه</label>
 
-                            <input type="radio" class="btn-check" name="category" id="mensportswear" autocomplete="off" <?php if($category == 'mensportswear') {echo 'checked';} ?> />
+                            <input type="radio" class="btn-check" name="category" value="mensportswear" id="mensportswear" autocomplete="off" <?php if($category == 'mensportswear') {echo 'checked';} ?> />
                             <label class="btn btn-secondary" for="mensportswear">لباس ورزشی مردانه</label>
                         </div>
                         <div class="btn-group mb-4">
-                            <input type="radio" class="btn-check" name="brand" id="adidas" autocomplete="off" <?php if($brand == 'adidas') {echo 'checked';} ?> />
+                            <input type="radio" class="btn-check" name="brand" value="adidas" id="adidas" autocomplete="off" <?php if($brand == 'adidas') {echo 'checked';} ?> />
                             <label class="btn btn-secondary" for="adidas">Adidas</label>
 
-                            <input type="radio" class="btn-check" name="brand" id="nike" autocomplete="off" <?php if($brand == 'nike') {echo 'checked';} ?> />
+                            <input type="radio" class="btn-check" name="brand" value="nike" id="nike" autocomplete="off" <?php if($brand == 'nike') {echo 'checked';} ?> />
                             <label class="btn btn-secondary" for="nike">Nike</label>
 
-                            <input type="radio" class="btn-check" name="brand" id="reebok" autocomplete="off" <?php if($brand == 'reebok') {echo 'checked';} ?> />
+                            <input type="radio" class="btn-check" name="brand" value="reebok" id="reebok" autocomplete="off" <?php if($brand == 'reebok') {echo 'checked';} ?> />
                             <label class="btn btn-secondary" for="reebok">Reebok</label>
 
-                            <input type="radio" class="btn-check" name="brand" id="underarmour" autocomplete="off" <?php if($brand == 'underarmour') {echo 'checked';} ?> />
+                            <input type="radio" class="btn-check" name="brand" value="underarmour" id="underarmour" autocomplete="off" <?php if($brand == 'underarmour') {echo 'checked';} ?> />
                             <label class="btn btn-secondary" for="underarmour">Under Armour</label>
                         </div>
                         <div class="form-outline mb-4">

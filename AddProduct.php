@@ -14,18 +14,16 @@
             header('Location: 403.php');
             exit;
             }
-    
-    include 'AddProduct_View.php';
-    
     }
-    else{
-        if(isset($_POST['submit'])){
+    include 'AddProduct_View.php';
+    if(isset($_POST['submit'])){
             $sql = "INSERT INTO product (producttitle, productname, productdescription, productcode, category, brand, productprice, productimg)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            $result = $db -> query($sql, $_POST['producttitle'], $_POST['productname'], $_POST['productdescription'], $_POST['productcode'], $_POST['category'], $_POST['brand'], $_POST['productprice'], $_POST['productimg']);
+            $Images_Dir = "Images" . "/" . $_POST['productimg'];
+            $result = $db -> query($sql, $_POST['producttitle'], $_POST['productname'], $_POST['productdescription'], $_POST['productcode'], $_POST['category'], $_POST['brand'], $_POST['productprice'], $Images_Dir);
             $db -> close();
             header('Location: Product_DataTable.php');
             exit;
         }
-    }
+    
 ?>

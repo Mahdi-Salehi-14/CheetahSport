@@ -3,6 +3,7 @@
     include 'Settings.php';
     include 'Security.php';
     session_start();
+    
     $uid = $_GET['id'];
     $db = new db($dbhost, $dbuser, $dbpass, $dbname);
     $sql = "SELECT * FROM user WHERE id = ?";

@@ -103,5 +103,17 @@
         <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
     </div>
     <!-- Copyright -->
+    <button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top"
+        style=" position: fixed;
+                bottom: 20px;
+                left: 20px;
+                display: none;"
+        >
+    <i class="fas fa-angle-double-up"></i>
+    </button>
 </footer>
 <script src="Styles\js\mdb.min.js"></script>
+<script src="BackToTop.js"></script>
