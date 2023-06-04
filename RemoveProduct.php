@@ -15,8 +15,9 @@
     }
     else
     {
-        $sql = "DELETE FROM product WHERE id = ?";
-        $result = $db -> query($sql, $pid);
+        $sql = "UPDATE product SET productquantity = ? WHERE id = ?";
+        $productquantity = 0;
+        $result = $db -> query($sql, $productquantity, $pid);
         header('Location: Product_DataTable.php');
         exit;
     }

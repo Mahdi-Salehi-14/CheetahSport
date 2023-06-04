@@ -25,13 +25,9 @@ else{
 
     $sql = "SELECT * FROM site_visit";
     $result = $db -> query($sql);
-    $visit = $result -> fetchAll();
+    $visit = $result -> fetchArray();
 
-    $visitcount = 0;
-
-    foreach($visit as $site_visit){
-        $visitcount = $visitcount + 1;
-    }
+    $visitcount = $visit['visit_count'];
 
     include 'AdminPanel_View.php';
 }

@@ -28,8 +28,8 @@
                             <label class="form-label" for="productdescription">توضیحات</label>
                         </div>
                         <div class="form-outline mb-4">
-                            <input type="number" id="productcode" name="productcode" class="form-control form-control-lg" required />
-                            <label class="form-label" for="productcode">کد</label>
+                            <input type="number" id="productquantity" name="productquantity" class="form-control form-control-lg" required />
+                            <label class="form-label" for="productquantity">تعداد</label>
                         </div>
                         <div class="btn-group mb-4">
                             <input type="radio" class="btn-check" name="category" value="sportshoes" id="sportshoes" autocomplete="off" checked />

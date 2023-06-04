@@ -41,12 +41,14 @@
                                 </div>
                                 <hr class="hr hr-blurry" />
                                 <div>
+                                    <p class="card-text">موجودی : <?php echo"{$product['productquantity']}"; ?></p>
                                     <form action='AddToBasket.php?id=<?php echo"{$product['id']}"; ?>' method="post" class="col-md-3">
                                         <div class="form-outline mb-4">
                                             <input type="number" id="productnumber" class="form-control" name="productnumber" value="1" />
                                             <label class="form-label" for="productnumber">تعداد</label>
                                         </div>
                                         <input type='hidden' id='basketstatus' name='basketstatus' value='notcompleted'>
+                                        <input type='hidden' id='productquantity' name='productquantity' value='<?php echo"{$product['productquantity']}"; ?>'>
                                         <button type="submit" name="submit" class="btn btn-primary btn-block">افزودن به سبد خرید</button>
                                     </form>
                                 </div>
@@ -61,36 +63,34 @@
                         <?php
                             foreach($suggestion as $product)
                                 {
-                                    if($product['id'] != $_GET['id']){
-                                        include 'CardLike.php';
-                                        include 'CardBookmark.php';
-                                        echo "
-                                            <div class='col'>
-                                                <div class = 'card h-100'>
-                                                    <div class='bg-image hover-overlay ripple' data-mdb-ripple-color='light'>
-                                                        <img src='{$product['productimg']}' class='img-fluid'/>
-                                                        <a href='ViewProduct.php?id={$product['id']}'>
-                                                        <div class='mask' style='background-color: rgba(251, 251, 251, 0.15);'></div>
+                                    include 'CardLike.php';
+                                    include 'CardBookmark.php';
+                                    echo "
+                                        <div class='col'>
+                                            <div class = 'card h-100'>
+                                                <div class='bg-image hover-overlay ripple' data-mdb-ripple-color='light'>
+                                                    <img src='{$product['productimg']}' class='img-fluid'/>
+                                                    <a href='ViewProduct.php?id={$product['id']}'>
+                                                    <div class='mask' style='background-color: rgba(251, 251, 251, 0.15);'></div>
+                                                    </a>
+                                                </div>
+                                                <div class='card-body'>
+                                                    <h5 class='card-title'><a href = 'ViewProduct.php?id={$product['id']}'>{$product['productname']}</a></h5>
+                                                    <p class='card-text'>قیمت :{$product['productprice']}</p>
+                                                </div>
+                                                <div class='card-footer'>
+                                                    <div class='cardbottomlink' style='display: grid; grid-template-columns: auto auto;'>
+                                                        <a href='LikeProduct.php?id={$product['id']}' class='card-iconlink'>
+                                                            <i class='{$lfa} fa-heart'></i>
                                                         </a>
-                                                    </div>
-                                                    <div class='card-body'>
-                                                        <h5 class='card-title'><a href = 'ViewProduct.php?id={$product['id']}'>{$product['productname']}</a></h5>
-                                                        <p class='card-text'>قیمت :{$product['productprice']}</p>
-                                                    </div>
-                                                    <div class='card-footer'>
-                                                        <div class='cardbottomlink' style='display: grid; grid-template-columns: auto auto;'>
-                                                            <a href='LikeProduct.php?id={$product['id']}' class='card-iconlink'>
-                                                                <i class='{$lfa} fa-heart'></i>
-                                                            </a>
-                                                            <a href='BookmarkProduct.php?id={$product['id']}' class='card-iconlink'>
-                                                                <i class='{$bfa} fa-bookmark'></i>
-                                                            </a>
-                                                        </div>
+                                                        <a href='BookmarkProduct.php?id={$product['id']}' class='card-iconlink'>
+                                                            <i class='{$bfa} fa-bookmark'></i>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
-                                        ";
-                                    }
+                                        </div>
+                                    ";
                                 }
                         ?>
                     </div>

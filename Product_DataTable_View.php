@@ -24,6 +24,9 @@
                                     نام
                                 </th>
                                 <th>
+                                    تعداد
+                                </th>
+                                <th>
                                     دسته
                                 </th>
                                 <th>
@@ -48,6 +51,9 @@
                                                 </td>
                                                 <td>
                                                     {$product['productname']}
+                                                </td>
+                                                <td>
+                                                    {$product['productquantity']}
                                                 </td>
                                                 <td>
                                                     {$product['category']}

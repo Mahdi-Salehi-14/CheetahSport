@@ -12,7 +12,7 @@
         exit;
     }
     else{
-        $sql = "SELECT * FROM product LIMIT 25";
+        $sql = "SELECT * FROM product";
         $result = $db -> query($sql);
         $productdatatable = $result -> fetchAll();
         include 'Product_DataTable_View.php';

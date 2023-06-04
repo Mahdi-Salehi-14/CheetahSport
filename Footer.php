@@ -10,9 +10,6 @@
 
         <!-- Right -->
         <div>
-        <a href="https://twitter.com/Mahdi_Deidara" class="me-4 text-reset">
-            <i class="fab fa-twitter"></i>
-        </a>
         <a href="https://www.instagram.com/mahdi.salehi.2003/" class="me-4 text-reset">
             <i class="fab fa-instagram"></i>
         </a>

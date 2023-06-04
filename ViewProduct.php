@@ -25,14 +25,21 @@
         $bookmarklike = $result -> fetchArray();
     }
 
-    $sql = "SELECT * FROM product WHERE category = ? OR brand = ? LIMIT 5";
-    $result = $db -> query($sql, $product['category'], $product['brand']);
+    $sql = "SELECT * FROM product WHERE id != ? AND category = ? OR brand = ? LIMIT 4";
+    $result = $db -> query($sql, $_GET['id'], $product['category'], $product['brand']);
     $suggestion = $result -> fetchAll();
 
     $sql = "SELECT * FROM comment WHERE productid = ? AND confirmation = 'confirmed'";
     $result = $db -> query($sql, $_GET['id']);
     $productcomment = $result -> fetchAll();
 
-    include 'ViewProduct_View.php';
+    if($product['productquantity'] > 0)
+    {
+        include 'ViewProduct_View.php';
+    }
+    else
+    {
+        include 'ViewProduct_View_NoQuantity.php';
+    }
     $db -> close();
 ?>

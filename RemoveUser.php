@@ -15,8 +15,9 @@
     }
     else
     {
-        $sql = "DELETE FROM user WHERE id = ?";
-        $result = $db -> query($sql, $uid);
+        $sql = "UPDATE user SET role = ? WHERE id = ?";
+        $deletestatus = "deleteuser";
+        $result = $db -> query($sql, $deletestatus, $uid);
         header('Location: User_DataTable.php');
         exit;
     }

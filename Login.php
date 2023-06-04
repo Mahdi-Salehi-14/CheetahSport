@@ -12,7 +12,7 @@ else if(isset($_POST['submit'])){
     $sql = "SELECT * FROM user WHERE email = ?";
     $result = $db -> query($sql, $_POST['email']);
     $user = $result -> fetchArray();
-    if( isset($user['password']) && $user['password'] == $_POST['password'] ){
+    if( isset($user['password']) && $user['password'] == $_POST['password'] && $user['role'] != 'deleteuser'){
         $uid = $user['id'];
         Authentication :: Login( $uid );
         if($user['role'] == 'adminuser'){
@@ -29,7 +29,7 @@ else if(isset($_POST['submit'])){
         }
     }
     else{
-        echo 'Username or Password Incorrect';
+        include 'Login_View_Incorrect.php';
     }
 }
 else{

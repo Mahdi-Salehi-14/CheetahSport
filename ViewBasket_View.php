@@ -44,10 +44,11 @@
                                                 </div>
                                                 <form action='EditBasket.php' method='post' class='col-md-3'>
                                                     <div class='form-outline mb-4'>
-                                                        <input type='number' id='productnumber' class='form-control' name='productnumber' value='{$product_basket['productnumber']}' />
+                                                        <input type='number' id='productnumber' class='form-control' name='productnumber' min='1' value='{$product_basket['productnumber']}' />
                                                         <label class='form-label' for='productnumber'>ویرایش تعداد کالا</label>
                                                     </div>
                                                     <input type='hidden' id='basketid' name='basketid' value='{$product_basket['id']}'>
+                                                    <input type='hidden' id='productid' name='productid' value='{$product_basket['productid']}'>
                                                     <button type='submit' name='submit' class='btn btn-primary btn-block'>ویرایش</button>
                                                 </form>
                                                 <hr class='hr hr-blurry' />
