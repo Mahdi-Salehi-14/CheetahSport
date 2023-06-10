@@ -29,10 +29,16 @@
         <!-- Left links -->
       </div>
       <!-- Collapsible wrapper -->
-
+      
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Icon -->
+        <div class="container-fluid">
+          <form action="Search.php" method="post" class="d-flex input-group w-auto">
+            <input name="search" type="search" class="form-control" placeholder="Search" aria-label="Search"/>
+            <button name="submit" type="submit" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Search</button>
+          </form>
+        </div>
         <a class="text-reset me-3" href = "<?php if(isset($_SESSION['uid'])) {echo 'ViewProfile.php';} else {echo 'Login.php';} ?>"><?php if(isset($_SESSION['uid'])) {echo '<i class="fas fa-user" data-mdb-toggle="tooltip" title="پروفایل کاربر"></i>';} else {echo '<i class="fas fa-user-plus" data-mdb-toggle="tooltip" title="ورود به حساب"></i>';} ?></a>
         <?php if(isset($_SESSION['uid']) && $user['role'] == 'adminuser') {echo '
               <a class="text-reset me-3" href = "AdminPanel.php" data-mdb-toggle="tooltip" title="پنل ادمین"><i class="fas fa-user-md"></i></a>
