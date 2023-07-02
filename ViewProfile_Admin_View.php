@@ -18,19 +18,19 @@
                         <div class="card border border-info shadow-0 mb-3 text-center">
                             <div class="card-header">اطلاعات کاربر</div>
                             <div class="card-body">
-                                <p class="card-text">نام : <?php echo "{$user['firstname']}"; ?></p>
+                                <p class="card-text">نام : <?php echo "{$viewinguser['firstname']}"; ?></p>
                                 <hr class="hr hr-blurry" />
-                                <p class="card-text">فامیل : <?php echo "{$user['lastname']}"; ?></p>
+                                <p class="card-text">فامیل : <?php echo "{$viewinguser['lastname']}"; ?></p>
                                 <hr class="hr hr-blurry" />
-                                <p class="card-text">جنسیت : <?php if($user['gender'] == 'male') {echo 'آقا';} else {echo 'خانم';} ?></p>
+                                <p class="card-text">جنسیت : <?php if($viewinguser['gender'] == 'male') {echo 'آقا';} else {echo 'خانم';} ?></p>
                                 <hr class="hr hr-blurry" />
-                                <p class="card-text">کد ملی : <?php echo "{$user['kodmeli']}"; ?></p>
+                                <p class="card-text">کد ملی : <?php echo "{$viewinguser['kodmeli']}"; ?></p>
                                 <hr class="hr hr-blurry" />
-                                <p class="card-text">ایمیل : <?php echo "{$user['email']}"; ?></p>
+                                <p class="card-text">ایمیل : <?php echo "{$viewinguser['email']}"; ?></p>
                                 <hr class="hr hr-blurry" />
-                                <p class="card-text">شماره تماس : <?php echo "{$user['number']}"; ?></p>
+                                <p class="card-text">شماره تماس : <?php echo "{$viewinguser['number']}"; ?></p>
                                 <hr class="hr hr-blurry" />
-                                <p class="card-text">وضعیت : <?php if($user['role'] == 'adminuser') {echo 'کاربر ادمین';} else if($user['role'] == 'normaluser') {echo 'کاربر عادی';} else {echo 'کاربر مسدود';} ?></p>
+                                <p class="card-text">وضعیت : <?php if($viewinguser['role'] == 'adminuser') {echo 'کاربر ادمین';} else if($viewinguser['role'] == 'normaluser') {echo 'کاربر عادی';} else if($viewinguser['role'] == 'deleteuser') {echo 'کاربر حذف شده';} else {echo 'کاربر مسدود';} ?></p>
                             </div>
                         </div>
                     </div>

@@ -16,11 +16,11 @@
                 <div>
                     <form action="" method="post" class="col-md-3">
                         <div class="form-outline mb-4">
-                            <input type="text" id="username" name="username" class="form-control form-control-lg" value = "<?php echo $username; ?>" required />
+                            <input type="text" id="username" name="username" class="form-control form-control-lg" value = "<?php echo $username; ?>" disabled />
                             <label class="form-label" for="username">نام</label>
                         </div>
                         <div class="form-outline mb-4">
-                            <input type="bumber" id="productid" name="productid" class="form-control form-control-lg" value = "<?php echo $productid; ?>" required />
+                            <input type="bumber" id="productid" name="productid" class="form-control form-control-lg" value = "<?php echo $productid; ?>" disabled />
                             <label class="form-label" for="productid">آی دی محصول مورد نظر</label>
                         </div>
                         <div class="mb-4">

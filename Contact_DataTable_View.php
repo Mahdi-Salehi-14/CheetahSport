@@ -56,7 +56,7 @@
                                                     <a href = 'RemoveContact.php?id={$message['id']}' class='btn btn-link btn-sm px-3' data-ripple-color='dark' data-mdb-toggle='tooltip' title='حذف'>
                                                         <i class='far fa-trash-alt'></i>
                                                     </a>
-                                                    <a href = 'ViewContact.php?id={$message['id']}' class='btn btn-link btn-sm px-3' data-ripple-color='dark' data-mdb-toggle='tooltip' title='مشاهده و ویرایش'>
+                                                    <a href = 'ViewContact.php?id={$message['id']}' class='btn btn-link btn-sm px-3' data-ripple-color='dark' data-mdb-toggle='tooltip' title='مشاهده'>
                                                         <i class='far fa-eye'></i>
                                                     </a>
                                                 </td>

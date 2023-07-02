@@ -17,7 +17,7 @@
     else{
         $sql = "SELECT * FROM user WHERE id = ?";
         $result = $db -> query($sql, $_GET['id']);
-        $user = $result -> fetchArray();
+        $viewinguser = $result -> fetchArray();
 
         $sql = "SELECT * FROM order_product WHERE userid = ?";
         $result = $db -> query($sql, $_GET['id']);

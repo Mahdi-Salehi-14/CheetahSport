@@ -1,8 +1,6 @@
 <header>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <!-- Container wrapper -->
     <div class="container-fluid">
-      <!-- Toggle button -->
       <button
         class="navbar-toggler"
         type="button"
@@ -14,10 +12,7 @@
       >
         <i class="fas fa-bars"></i>
       </button>
-
-      <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" href = "index.php">خانه</a>
@@ -26,13 +21,8 @@
             <a class="nav-link" href = "ProductList.php">محصولات</a>
           </li>
         </ul>
-        <!-- Left links -->
       </div>
-      <!-- Collapsible wrapper -->
-      
-      <!-- Right elements -->
       <div class="d-flex align-items-center">
-        <!-- Icon -->
         <div class="container-fluid">
           <form action="Search.php" method="post" class="d-flex input-group w-auto">
             <input name="search" type="search" class="form-control" placeholder="جستجو" aria-label="Search"/>
@@ -50,8 +40,6 @@
               <a class="text-reset me-3" href = "Logout.php" data-mdb-toggle="tooltip" title="خروج از حساب"><i class="fas fa-power-off"></i></a>
         ';} ?>
       </div>
-      <!-- Right elements -->
     </div>
-    <!-- Container wrapper -->
   </nav>
 </header>

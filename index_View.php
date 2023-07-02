@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang = "fa">
     <head>
-        <title>خانه | Home</title>
+        <title>خانه</title>
         <meta charset = "utf-8">
         <link rel = "stylesheet" href = "Styles\css\mdb.rtl.min.css" type = "text/css">
         <script src="https://kit.fontawesome.com/766647deb5.js" crossorigin="anonymous"></script>

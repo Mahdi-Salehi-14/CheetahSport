@@ -1,8 +1,6 @@
 <hr class="hr hr-blurry" />
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
   <div class="container-fluid">
-    <!-- Toggle button -->
     <button
       class="navbar-toggler"
       type="button"
@@ -14,10 +12,7 @@
     >
         <i class="fas fa-tools"></i>
     </button>
-
-    <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
-      <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="AdminPanel.php">داشبورد</a>
@@ -25,7 +20,6 @@
         <li class="nav-item">
           <a class="nav-link" href="AddProduct.php">افزودن محصول</a>
         </li>
-        <!-- Navbar dropdown -->
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -37,7 +31,6 @@
           >
             جدول ها
           </a>
-          <!-- Dropdown menu -->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
               <a class="dropdown-item" href="User_DataTable.php">جدول کاربران</a>
@@ -55,9 +48,6 @@
           </ul>
         </li>
       </ul>
-      <!-- Left links -->
     </div>
-    <!-- Collapsible wrapper -->
   </div>
-  <!-- Container wrapper -->
 </nav>
