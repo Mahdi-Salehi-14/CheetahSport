@@ -14,7 +14,7 @@
                 <hr class="hr hr-blurry" />
                 <h1>فاکتور خرید شما</h1>
                 <div>
-                    <h2>اطلاعات خرید</h2>
+                    <h2>اطلاعات خریدار</h2>
                     <hr class="hr hr-blurry" />
                     <p class='card-text'>نام خریدار : <?php echo "{$user['firstname']}"; ?></p>
                     <p class='card-text'>نام خانوادگی خریدار : <?php echo "{$user['lastname']}"; ?></p>
