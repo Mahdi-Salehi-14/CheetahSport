@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 04, 2023 at 06:47 PM
+-- Generation Time: Jul 18, 2023 at 06:12 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `bookmark_product` (
   `productid` int(11) NOT NULL,
   `bookmarkstatus` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `bookmark_product`
@@ -44,11 +44,12 @@ CREATE TABLE IF NOT EXISTS `bookmark_product` (
 
 INSERT INTO `bookmark_product` (`id`, `userid`, `productid`, `bookmarkstatus`) VALUES
 (1, 1, 1, 'bookmark-on'),
-(2, 1, 2, 'bookmark-off'),
+(2, 1, 2, 'bookmark-on'),
 (3, 1, 4, 'bookmark-on'),
 (4, 5, 3, 'bookmark-on'),
 (5, 5, 4, 'bookmark-on'),
-(6, 5, 7, 'bookmark-on');
+(6, 5, 7, 'bookmark-on'),
+(7, 1, 10, 'bookmark-on');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
 
 INSERT INTO `comment` (`id`, `username`, `productid`, `commenttext`, `confirmation`) VALUES
 (1, 'Mahdi', 2, 'خوب بود راضی بودم', 'confirmed'),
-(2, 'Ali', 2, 'خوشم نیومد', 'confirmed'),
+(2, 'Ali', 2, 'خوشم نیومد', 'unconfirmed'),
 (3, 'Aria', 4, 'قیمتش یکم بالاس', 'confirmed');
 
 -- --------------------------------------------------------
@@ -88,21 +89,26 @@ CREATE TABLE IF NOT EXISTS `like_product` (
   `productid` int(11) NOT NULL,
   `likestatus` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `like_product`
 --
 
 INSERT INTO `like_product` (`id`, `userid`, `productid`, `likestatus`) VALUES
-(1, 1, 1, 'dislike'),
+(1, 1, 1, 'like'),
 (2, 1, 2, 'like'),
-(3, 1, 4, 'like'),
+(3, 1, 4, 'dislike'),
 (4, 1, 3, 'like'),
 (5, 5, 1, 'like'),
 (6, 5, 2, 'like'),
 (7, 5, 7, 'like'),
-(8, 1, 22, 'like');
+(8, 1, 22, 'dislike'),
+(9, 1, 7, 'dislike'),
+(10, 1, 14, 'dislike'),
+(11, 1, 20, 'dislike'),
+(12, 1, 10, 'like'),
+(13, 1, 17, 'like');
 
 -- --------------------------------------------------------
 
@@ -140,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `order_item` (
   `productid` int(11) NOT NULL,
   `productnumber` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `order_item`
@@ -156,7 +162,12 @@ INSERT INTO `order_item` (`id`, `orderid`, `productid`, `productnumber`) VALUES
 (7, 5, 3, 1),
 (8, 6, 7, 2),
 (9, 6, 8, 1),
-(10, 7, 1, 4);
+(10, 7, 1, 4),
+(11, 8, 2, 1),
+(12, 9, 2, 1),
+(13, 10, 2, 1),
+(14, 10, 14, 1),
+(15, 10, 22, 2);
 
 -- --------------------------------------------------------
 
@@ -173,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   `transport` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   `payment` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `order_product`
@@ -184,7 +195,10 @@ INSERT INTO `order_product` (`id`, `userid`, `address`, `postalcode`, `transport
 (4, 1, 'اصفهان', '1234567895', 'mail', 'internet'),
 (3, 1, 'اصفهان', '1234567895', 'mail', 'internet'),
 (6, 5, 'esfahan', '1254873695', 'mail', 'door-to-door'),
-(7, 3, 'اصفهان', '1234567895', 'mail', 'internet');
+(7, 3, 'اصفهان', '1234567895', 'mail', 'internet'),
+(8, 1, 'hjkjkjdag', '123456795', 'in-person', 'door-to-door'),
+(9, 1, 'اصفهان هزارجریب', '1234567895', 'mail', 'door-to-door'),
+(10, 1, 'ایران - اصفهان', '1234567895', 'in-person', 'door-to-door');
 
 -- --------------------------------------------------------
 
@@ -212,17 +226,17 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 INSERT INTO `product` (`id`, `producttitle`, `productname`, `productdescription`, `productquantity`, `category`, `brand`, `productprice`, `productimg`) VALUES
 (1, 'Adidas 2021 UCL Ball', 'Adidas 2021 UCL Ball', 'توپ آدیداس\r\n\r\nاصل\r\n\r\nمدل لیگ قهزمانان اروپا\r\n', 20, 'sportsequipment', 'adidas', 2000000, 'Images/Adidas 2021 UCL Ball - 4.jpg'),
-(2, 'Adidas Men Badge Of Sport Tee', 'Adidas Men Badge Of Sport Tee', 'تیشرت آدیداس خاکستری\r\n\r\nاصل', 20, 'mensportswear', 'adidas', 3500000, 'Images/Adidas Men Badge Of Sport Tee - 1.jpg'),
+(2, 'Adidas Men Badge Of Sport Tee', 'Adidas Men Badge Of Sport Tee', 'تیشرت آدیداس خاکستری\r\n\r\nاصل', 17, 'mensportswear', 'adidas', 3500000, 'Images/Adidas Men Badge Of Sport Tee - 1.jpg'),
 (3, 'Adidas Multix Shose', 'Adidas Multix Shose', 'کفش ورزشی آدیداس\r\n\r\nمناسب دویدن و پیاده روی', 20, 'sportshoes', 'adidas', 4000000, 'Images/Adidas Multix Shose - 3.jpg'),
 (4, 'Adidas Women Aeroready Lightweight Long Sleeve Hooded Tee', 'Adidas Women Aeroready Lightweight Long Sleeve Hooded Tee', 'پیراهن زنانه آدیداس\r\n\r\nجنس نخی', 20, 'womensportswear', 'adidas', 3500000, 'Images/Adidas Women Aeroready Lightweight Long Sleeve Hooded Tee - 1.jpg'),
 (8, 'Nike Dri-FIT', 'Nike Dri-FIT', 'هودی نایک\r\n\r\nجنس نخ و پلی استر', 20, 'mensportswear', 'nike', 5000000, 'Images/Nike Dri-FIT - 1.jpg'),
 (7, 'Nike Air Presto', 'Nike Air Presto', 'کفش وزرشی نایک\r\n\r\nمناسب دویدن و پیاده روی', 20, 'sportshoes', 'nike', 7500000, 'Images/Nike Air Presto - 5.jpg'),
 (9, 'Nike Dri-FIT Academy', 'Nike Dri-FIT Academy', 'شلوار ورزشی مردانه\r\n\r\nجنس نخ و پلی استر\r\n\r\n', 20, 'mensportswear', 'nike', 5500000, 'Images/Nike Dri-FIT Academy - 1.jpg'),
 (10, 'Nike Free Metcon 3 Shose', 'Nike Free Metcon 3 Shose', 'کفش وزرشی نایک\r\n\r\nمناسب دویدن و پیاده روی', 20, 'sportshoes', 'nike', 8000000, 'Images/Nike Free Metcon 3 Shose - 4.jpg'),
-(11, 'Nike Futsal Pro', 'Nike Futsal Pro', 'توپ فوتسال نایک\r\n\r\nمناسب سالن و چمن مصنوعی', 20, 'sportsequipment', 'nike', 2000000, 'Images/Nike Futsal Pro - 1.jpg'),
+(11, 'Nike Futsal Pro Ball', 'Nike Futsal Pro Ball', 'توپ فوتسال نایک\r\n\r\nمناسب سالن و چمن مصنوعی', 20, 'sportsequipment', 'nike', 2000000, 'Images/Nike Futsal Pro - 1.jpg'),
 (12, 'Nike Sportswear', 'Nike Sportswear', 'تی شرت نایک\r\n\r\nجنس نخی', 20, 'mensportswear', 'nike', 3500000, 'Images/Nike Sportswear - 1.jpg'),
 (13, 'Nike Sportswear Gym Vintage', 'Nike Sportswear Gym Vintage', 'هودی نایک زنانه\r\n\r\nجنس نخ و پلی استر', 20, 'womensportswear', 'nike', 5000000, 'Images/Nike Sportswear Gym Vintage - 1.jpg'),
-(14, 'Reebok FX1626 Shose', 'Reebok FX1626 Shose', 'کفش وزرشی ریبوک\r\n\r\nمناسب دویدن و پیاده روی', 20, 'sportshoes', 'reebok', 7000000, 'Images/Reebok FX1626 Shose - 3.jpg'),
+(14, 'Reebok FX1626 Shose', 'Reebok FX1626 Shose', 'کفش وزرشی ریبوک\r\n\r\nمناسب دویدن و پیاده روی', 19, 'sportshoes', 'reebok', 7000000, 'Images/Reebok FX1626 Shose - 3.jpg'),
 (15, 'Reebok Men Jersey Tee', 'Reebok Men Jersey Tee', 'تی شرت ریبوک\r\nجنس نخی', 20, 'mensportswear', 'reebok', 3000000, 'Images/Reebok Men Jersey Tee - 1.jpg'),
 (16, 'Reebok One Series Wrist Gloves', 'Reebok One Series Wrist Gloves', 'دستکش ریبوک\r\n\r\nاصل\r\n\r\nنخی تو پنبه ای', 20, 'sportsequipment', 'reebok', 1000000, 'Images/Reebok One Series Wrist Gloves - 1.jpg'),
 (17, 'Reebok Women Retro Overdize Hoodie', 'Reebok Women Retro Overdize Hoodie', 'هودی ریبوک زنانه\r\nجنس نخ و پلی استر', 20, 'womensportswear', 'reebok', 5500000, 'Images/Reebok Women Retro Overdize Hoodie - 1.jpg'),
@@ -230,7 +244,7 @@ INSERT INTO `product` (`id`, `producttitle`, `productname`, `productdescription`
 (19, 'UA Legacy Windbreaker Jacket', 'UA Legacy Windbreaker Jacket', 'ژاکت ورزشی آندر آرمور\r\n\r\nجنس نخ و پلی استر', 20, 'mensportswear', 'underarmour', 4500000, 'Images/UA Legacy Windbreaker Jacket - 1.png'),
 (20, 'UA Phantom 2 ABC Shose', 'UA Phantom 2 ABC Shose', 'کفش وزرشی آندر آرمور\r\n\r\nمناسب دویدن و پیاده روی', 20, 'sportshoes', 'underarmour', 7000000, 'Images/UA Phantom 2 ABC Shose - 4.png'),
 (21, 'UA Team Issue Graphic T-Shirt', 'UA Team Issue Graphic T-Shirt', 'تی شرت آندر آرمور\r\n\r\nجنس نخی', 20, 'mensportswear', 'underarmour', 3000000, 'Images/UA Team Issue Graphic T-Shirt - 1.png'),
-(22, 'UA Undeniable Duffel 4.0 Small Duffle Bag', 'UA Undeniable Duffel 4.0 Small Duffle Bag', 'کیف ورزشی آندر آرمور\r\n\r\nمناسب استخر و دیگر مکان های ورزشی', 20, 'sportsequipment', 'underarmour', 2500000, 'Images/UA Undeniable Duffel 4.0 Small Duffle Bag - 1.png');
+(22, 'UA Undeniable Duffel 4.0 Small Duffle Bag', 'UA Undeniable Duffel 4.0 Small Duffle Bag', 'کیف ورزشی آندر آرمور\r\n\r\nمناسب استخر و دیگر مکان های ورزشی', 18, 'sportsequipment', 'underarmour', 2500000, 'Images/UA Undeniable Duffel 4.0 Small Duffle Bag - 1.png');
 
 -- --------------------------------------------------------
 
@@ -246,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `product_basket` (
   `productnumber` int(11) NOT NULL,
   `basketstatus` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `product_basket`
@@ -262,7 +276,12 @@ INSERT INTO `product_basket` (`id`, `userid`, `productid`, `productnumber`, `bas
 (7, 1, 3, 1, 'completed'),
 (8, 5, 7, 2, 'completed'),
 (9, 5, 8, 1, 'completed'),
-(26, 3, 1, 4, 'completed');
+(26, 3, 1, 4, 'completed'),
+(30, 1, 2, 1, 'completed'),
+(29, 1, 2, 1, 'completed'),
+(31, 1, 2, 1, 'completed'),
+(32, 1, 14, 1, 'completed'),
+(33, 1, 22, 2, 'completed');
 
 -- --------------------------------------------------------
 
@@ -282,7 +301,7 @@ CREATE TABLE IF NOT EXISTS `site_visit` (
 --
 
 INSERT INTO `site_visit` (`id`, `visit_count`) VALUES
-(1, 32);
+(1, 140);
 
 -- --------------------------------------------------------
 
@@ -313,7 +332,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `gender`, `kodmeli`, `email`, `number`, `password`, `role`) VALUES
 (1, 'Mohammad Mahdi', 'Salehi', 'male', '1273935071', 'Mahdi2015GAD@Gmail.com', '09162422880', '13811206mahdi14', 'adminuser'),
-(2, 'Ali', 'Torkashvand', 'male', '1284953669', 'AliTor@Yahoo.com', '09309831188', '1234', 'blockuser'),
+(2, 'Ali', 'Torkashvand', 'male', '1284953669', 'AliTor@Yahoo.com', '09309831188', '1234', 'normaluser'),
 (3, 'Melika', 'Farbod', 'female', '1275896653', 'Melika@Gmail.com', '09135844636', '123456', 'normaluser'),
 (4, 'Ario', 'Hoseini', 'male', '1235465461', 'Ario@Gmail.com', '09162544585', '1234', 'normaluser'),
 (5, 'hgdsfs', 'sdfsf', 'female', '12356', 'user@Gmail.com', '09162522555', '1234', 'deleteuser');

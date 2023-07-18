@@ -6,8 +6,6 @@
 
     $db = new db($dbhost, $dbuser, $dbpass, $dbname);
 
-    $uid = Authentication :: uid();
-
     if(isset($_SESSION['uid'])){
         $sql = "SELECT * FROM user WHERE id = ?";
         $result = $db -> query($sql, $_SESSION['uid']);
