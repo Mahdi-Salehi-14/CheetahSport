@@ -38,6 +38,9 @@
             <li>
               <a class="dropdown-item" href="Product_DataTable.php">جدول محصولات</a>
             </li>
+            <li>
+              <a class="dropdown-item" href="Order_DataTable.php">جدول سفارش ها</a>
+            </li>
             <li><hr class="dropdown-divider" /></li>
             <li>
               <a class="dropdown-item" href="Comment_DataTable.php">جدول کامنت ها</a>
